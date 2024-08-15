@@ -35,13 +35,13 @@
               {% if categories.active != blank %}
                 <div class="category-nav header-category-nav">
                   <button class="category-nav-heading" aria-label="Open category navigation" aria-controls="header-dropdown" aria-expanded="false">
-                    <div class="category-nav-page">Shop</div>
+                    <div class="category-nav-page">Goods</div>
                     <svg aria-hidden="true" fill="currentColor" class="category-nav-arrow" viewBox="0 0 15 7.6" enable-background="new 0 0 15 7.6"><path d="M15 1.1l-7.5 6.5-7.5-6.3 1-1.2 6.5 5.5 6.5-5.6z"/></svg>
                   </button>
                   <div class="category-dropdown" id="header-dropdown" aria-hidden="true">
                     {% if categories.active != blank %}
                       <ul class="dropdown-list categories-list">
-                        <li><a href="/products">All products</a></li>
+                        {% comment %}<li><a href="/products">Everything</a></li>{% endcomment %}
                         {% for category in categories.active %}
                           <li>{{ category | link_to }}</li>
                         {% endfor %}
@@ -50,7 +50,7 @@
                   </div>
                 </div>
               {% else %}
-                <a href="/products">{{ pages.products.name }}</a>
+                <a href="/products">Goods</a>
               {% endif %}
             </li>
             {% for page in pages.all limit: theme.nav_items %}
@@ -176,7 +176,7 @@
           </ul>
         {% endif %}
         <ul class="footer__pages">
-          <li><a href="/products">{{ pages.products.name }}</a></li>
+          <li><a href="/products">Goods</a></li>
           {% for page in pages.all %}
             <li>{{ page | link_to }}</li>
           {% endfor %}
@@ -203,7 +203,7 @@
           <nav aria-label="Primary navigation">
             <ul class="overlay-page-list">
               <li><a href="/">{{ pages.home.name }}</a></li>
-              <li><a href="/products">{{ pages.products.name }}</a></li>
+              <li><a href="/products">Goods</a></li>
               {% for page in pages.all %}
                 <li>{{ page | link_to }}</li>
               {% endfor %}
