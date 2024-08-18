@@ -41,7 +41,7 @@
                   <div class="category-dropdown" id="header-dropdown" aria-hidden="true">
                     {% if categories.active != blank %}
                       <ul class="dropdown-list categories-list">
-                        {% comment %}<li><a href="/products">Everything</a></li>{% endcomment %}
+                        <li><a href="/products">All</a></li>
                         {% for category in categories.active %}
                           <li>{{ category | link_to }}</li>
                         {% endfor %}

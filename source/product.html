@@ -162,9 +162,10 @@
                 {% endfor %}
               </div>
             {% else %}
+              <label class="product-option-select-label" for="option">Size</label>
               <div class="select">
-                <select class="product-option-select" id="option" name="cart[add][id]" aria-label="Select variant" required>
-                  <option value="" disabled="disabled" selected>Select variant</option>
+                <select class="product-option-select" id="option" name="cart[add][id]" aria-label="Select one…" required>
+                  <option value="" disabled="disabled" selected>Select one…</option>
                   {% for option in product.options %}
                     <option value="{{ option.id }}" data-price="{{ option.price }}"{% if option.sold_out %} disabled="disabled" disabled-type="sold-out"{% endif %}>{{ option.name }} {% if option.sold_out %} (Sold out){% endif %}</option>
                   {% endfor %}
@@ -184,7 +185,11 @@
       </form>
     {% endif %}
     {% if product.description != blank %}
-      <div class="product-detail__description">{{ product.description | paragraphs }}</div>
+      <div class="product-detail__description">
+        {{ product.description | paragraphs }}
+        <p>Sold out? Can’t find your size?</p>
+        <p><button class="button button--secondary" data-tally-open="wgLWBD" data-tally-hide-title="1" data-tally-auto-close="5000">Request a Restock</button></p>
+      </div>
     {% endif %}
   </section>
 </div>
