@@ -30,7 +30,7 @@
               {% assign product_status = '' %}
               {% case product.status %}
                 {% when 'active' %}
-                  {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                  {% if product.on_sale %}{% assign product_status = 'Pre-order' %}{% endif %}
                 {% when 'sold-out' %}
                   {% assign product_status = 'Sold out' %}
                 {% when 'coming-soon' %}
