@@ -40,7 +40,7 @@
   --margin-size: 64px
 
   --layout-width: 1200px
-  --side-padding: 40px
+  --side-padding: 30px
 
   @media screen and (max-width: $break-large)
     --side-padding: 20px
@@ -97,7 +97,6 @@ a
   @media (hover: hover)
     &:hover
       color: var(--link-hover-color)
-      text-decoration: underline
 
 button.button, a.button, div.button
   +appearance(none)
@@ -131,7 +130,7 @@ button.button, a.button, div.button
     transition: color .2s linear
 
     &:hover, &:focus
-      text-decoration: underline
+      text-decoration: none
       background: none
       border: 0
       color: var(--link-hover-color)
@@ -241,6 +240,9 @@ h1, h2, h3, h4, h5, h6
   margin-bottom: 48px
   text-align: center
 
+  @media screen and (max-width: $break-small)
+    font-size: 1.75rem
+
 .social-icons
   +flexbox
   gap: 16px
@@ -296,6 +298,7 @@ h1, h2, h3, h4, h5, h6
   align-items: center
   flex-direction: column
   gap: 50px
+  margin-top: 100px
   padding: 60px 20px
   text-align: center
   width: 100%
@@ -324,7 +327,21 @@ h1, h2, h3, h4, h5, h6
       padding: 2px
 
       &:hover
-        text-decoration: underline
+        text-decoration: none
+
+  &__custom_text
+    display: grid
+    grid-template-columns: 1fr
+    justify-content: center
+    text-align: center
+    padding: 20px 50px
+    gap: 20px
+
+    > *
+      justify-self: center
+    
+    @media screen and (max-width: $break-small)
+      padding: 10px
 
   .bigcartel-credit
     font-size: 14px
@@ -334,6 +351,7 @@ h1, h2, h3, h4, h5, h6
     gap: 8px
     outline-offset: 4px
     padding: 2px 0
+    text-decoration: none
 
     &__text
       position: relative
@@ -388,3 +406,9 @@ h1, h2, h3, h4, h5, h6
 
   a
     text-decoration: underline
+
+  img
+    display: inline-block
+    margin: 0 auto
+    max-width: 100%
+    margin-bottom: 16px
